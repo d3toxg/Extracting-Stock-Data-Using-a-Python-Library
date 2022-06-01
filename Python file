@@ -10,3 +10,19 @@ apple = yf.Ticker("AAPL")
 Stock Info
 apple_info=apple.info
 apple_info
+
+We can get the 'country' using the key country
+apple_info['country']
+
+Extracting Share Price
+A share is the single smallest part of a company's stock that you can buy, the prices of these shares fluctuate over time. Using the history() method we can get the share price of the stock over a certain period of time. Using the period parameter we can set how far back from the present to get data. The options for period are 1 day (1d), 5d, 1 month (1mo) , 3mo, 6mo, 1 year (1y), 2y, 5y, 10y, ytd, and max.
+
+apple_share_price_data = apple.history(period="max")
+apple_share_price_data.head()
+apple_share_price_data.reset_index(inplace=True)
+apple_share_price_data.plot(x="Date", y="Open")
+
+Extracting Dividends
+apple.dividends
+apple.dividends.plot()
+
