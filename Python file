@@ -1,0 +1,12 @@
+!pip install yfinance==0.1.67
+#!pip install pandas==1.3.3
+
+import yfinance as yf
+import pandas as pd
+
+Using the yfinance Library to Extract Stock Data
+apple = yf.Ticker("AAPL")
+
+Stock Info
+apple_info=apple.info
+apple_info
